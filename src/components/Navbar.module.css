@@ -1,0 +1,237 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--bg-primary);
+  border-bottom: var(--border-thick);
+  box-shadow: 0 4px 0px #000000;
+  transition: background-color var(--transition-fast);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 16px 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--text-primary);
+  user-select: none;
+  background: var(--neon-yellow);
+  border: var(--border-thin);
+  padding: 6px 14px;
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow-brutal-sm);
+  transition: var(--transition-bounce);
+}
+
+.logo:hover {
+  transform: rotate(-2deg) scale(1.05);
+}
+
+.logoIcon {
+  font-size: 24px;
+  animation: wave 2.5s ease infinite;
+  transform-origin: bottom center;
+  display: inline-block;
+}
+
+.logoText {
+  letter-spacing: -1px;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+
+.link {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text-primary);
+  border: 2px solid transparent;
+  padding: 6px 12px;
+  border-radius: var(--border-radius-sm);
+  transition: var(--transition-bounce);
+}
+
+.link:hover {
+  background: var(--bg-secondary);
+  border-color: #000000;
+}
+
+.active {
+  background: var(--primary-light);
+  border-color: #000000;
+  box-shadow: var(--shadow-brutal-sm);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: var(--border-radius-xl);
+  font-size: 15px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: var(--transition-bounce);
+  border: var(--border-thin);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btnText {
+  background: transparent;
+  border-color: transparent;
+  color: var(--text-primary);
+}
+
+.btnText:hover {
+  background: var(--bg-secondary);
+  border-color: #000000;
+}
+
+.btnOutline {
+  background: #ffffff;
+  color: #000000;
+  box-shadow: var(--shadow-brutal-sm);
+}
+
+.btnOutline:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-brutal);
+  background: var(--bg-secondary);
+}
+
+.btnOutline:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #000000;
+}
+
+.btnPrimary {
+  background: var(--primary);
+  color: #000000;
+  box-shadow: var(--shadow-brutal-sm);
+}
+
+.btnPrimary:hover {
+  background: var(--primary-hover);
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-brutal);
+}
+
+.btnPrimary:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #000000;
+}
+
+.userMenu {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #000000;
+  box-shadow: 2px 2px 0px #000000;
+}
+
+.userName {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.menuToggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+/* Mobile responsive menu */
+.mobileMenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--bg-primary);
+  border-bottom: var(--border-thick);
+  border-left: var(--border-thick);
+  border-right: var(--border-thick);
+  padding: 20px 24px;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 8px 0px #000000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.mobileMenuOpen {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .navLinks {
+    display: none;
+  }
+  
+  .actions {
+    display: none;
+  }
+  
+  .menuToggle {
+    display: block;
+    font-size: 28px;
+    border: var(--border-thin);
+    width: 44px;
+    height: 44px;
+    border-radius: var(--border-radius-sm);
+    background: var(--bg-primary);
+    box-shadow: var(--shadow-brutal-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .menuToggle:active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+  }
+  
+  .mobileMenu .link {
+    padding: 8px 0;
+    width: 100%;
+    border-bottom: 2px solid #000000;
+  }
+  
+  .mobileActions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+  }
+}

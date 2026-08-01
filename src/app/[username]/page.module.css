@@ -1,0 +1,447 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.main {
+  flex: 1;
+}
+
+/* Cover & Profile Header */
+.coverBanner {
+  height: 260px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  background-color: var(--bg-tertiary);
+  border-bottom: var(--border-thick);
+}
+
+.profileContainer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px 64px 24px;
+}
+
+.profileLayout {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr;
+  gap: 40px;
+  margin-top: -64px; /* Pull profile header over the banner */
+  position: relative;
+  z-index: 1;
+}
+
+/* Left Column */
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.profileHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: var(--border-radius-lg);
+  border: var(--border-thick);
+  object-fit: cover;
+  background: var(--bg-primary);
+  box-shadow: var(--shadow-brutal);
+}
+
+.metaInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.name {
+  font-size: 36px;
+  font-weight: 950;
+  color: var(--text-primary);
+  letter-spacing: -1px;
+}
+
+.bio {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.statsRow {
+  display: flex;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.statBadge {
+  background: var(--bg-primary);
+  border: var(--border-thin);
+  padding: 6px 14px;
+  border-radius: var(--border-radius-sm);
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text-primary);
+  box-shadow: var(--shadow-brutal-sm);
+}
+
+.statBadge:nth-child(1) { background: var(--neon-yellow); }
+.statBadge:nth-child(2) { background: var(--neon-blue); }
+
+/* About Card */
+.aboutCard {
+  background: var(--bg-primary);
+  border: var(--border-thick);
+  padding: 32px;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-brutal);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sectionTitle {
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--text-primary);
+}
+
+.aboutText {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-weight: 600;
+}
+
+/* Tipping Widget Card - Right Column */
+.rightColumn {
+  position: relative;
+}
+
+.widgetCard {
+  position: sticky;
+  top: 96px; /* Offset for sticky navbar */
+  background: var(--bg-primary);
+  border: var(--border-thick);
+  border-radius: var(--border-radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-brutal);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.widgetHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--text-primary);
+  border-bottom: var(--border-thin);
+  padding-bottom: 12px;
+}
+
+/* Coffee Quantity Grid selector */
+.selectorGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.qtyBtn {
+  aspect-ratio: 1;
+  background: #ffffff;
+  border: var(--border-thin);
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: 900;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-bounce);
+  color: #000000;
+  box-shadow: var(--shadow-brutal-sm);
+}
+
+.qtyBtn:hover {
+  background: var(--bg-secondary);
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-brutal);
+}
+
+.qtyActive {
+  background: var(--neon-yellow) !important;
+  transform: translate(1px, 1px) !important;
+  box-shadow: 2px 2px 0px #000 !important;
+}
+
+.qtyLabel {
+  font-size: 11px;
+  font-weight: 900;
+  color: var(--text-tertiary);
+  margin-top: 2px;
+}
+
+.qtyActive .qtyLabel {
+  color: #000000;
+}
+
+/* Custom Count Input */
+.customInputWrapper {
+  border: var(--border-thin);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  box-shadow: inset 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.customInputWrapper:focus-within {
+  background: #ffffff;
+}
+
+.customInput {
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 12px 6px;
+  font-size: 18px;
+  font-weight: 900;
+  text-align: center;
+}
+
+/* Support Input Elements */
+.inputsBox {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.inputField {
+  width: 100%;
+  border: var(--border-thin);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  outline: none;
+  transition: var(--transition-bounce);
+}
+
+.inputField:focus {
+  border-color: var(--primary);
+  background: #ffffff;
+  transform: translate(-1px, -1px);
+  box-shadow: var(--shadow-brutal-sm);
+}
+
+.textareaField {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text-primary);
+  cursor: pointer;
+  user-select: none;
+}
+
+.btnSupport {
+  background: var(--primary);
+  color: #000000;
+  border: var(--border-thick);
+  padding: 16px;
+  border-radius: 40px;
+  font-size: 18px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: var(--transition-bounce);
+  box-shadow: var(--shadow-brutal);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.btnSupport:hover {
+  background: var(--primary-hover);
+  box-shadow: var(--shadow-brutal-lg);
+  transform: translate(-2px, -2px);
+}
+
+.btnSupport:active {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0px #000;
+}
+
+/* Supporters Feed */
+.feedCard {
+  background: var(--bg-primary);
+  border: var(--border-thick);
+  border-radius: var(--border-radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-brutal);
+  display: flex;
+  gap: 16px;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.feedInitials {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--border-radius-sm);
+  border: var(--border-thin);
+  background: var(--neon-pink);
+  color: #000000;
+  font-weight: 900;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 0px #000;
+  flex-shrink: 0;
+}
+
+.feedMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.feedHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.supporterTitle {
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--text-primary);
+}
+
+.supporterGave {
+  font-weight: 800;
+  color: var(--text-secondary);
+}
+
+.feedMessage {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  line-height: 1.5;
+  background: var(--bg-secondary);
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: var(--border-thin);
+  border-left: 6px solid var(--primary);
+  box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05);
+}
+
+.feedTime {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  font-weight: 800;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-secondary);
+  font-weight: 700;
+  background: var(--bg-primary);
+  border: var(--border-thick);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-brutal);
+}
+
+/* Success alert confirmation */
+.successContainer {
+  background: var(--neon-green);
+  border: var(--border-thick);
+  border-radius: var(--border-radius-lg);
+  padding: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  box-shadow: var(--shadow-brutal);
+  animation: scaleIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.successIcon {
+  font-size: 36px;
+  color: #000000;
+  animation: scaleIn 0.5s ease;
+}
+
+.successTitle {
+  font-size: 20px;
+  font-weight: 900;
+  color: #000000;
+}
+
+.successDesc {
+  font-size: 14px;
+  color: #000000;
+  font-weight: 700;
+}
+
+@media (max-width: 968px) {
+  .profileLayout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .widgetCard {
+    position: static;
+  }
+}
+
+@media (max-width: 576px) {
+  .coverBanner {
+    height: 180px;
+  }
+  
+  .profileLayout {
+    margin-top: -48px;
+  }
+  
+  .avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 14px;
+  }
+  
+  .name {
+    font-size: 28px;
+  }
+}

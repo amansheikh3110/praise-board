@@ -1,0 +1,247 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal {
+  background: var(--bg-primary);
+  border-radius: var(--border-radius-lg);
+  border: var(--border-thick);
+  max-width: 440px;
+  width: 100%;
+  box-shadow: var(--shadow-brutal-lg);
+  animation: scaleIn 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  overflow: hidden;
+}
+
+.header {
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: var(--border-thick);
+  background: var(--bg-secondary);
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--text-primary);
+}
+
+.btnClose {
+  background: #ffffff;
+  border: var(--border-thin);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #000000;
+  transition: var(--transition-bounce);
+  box-shadow: 2px 2px 0px #000;
+}
+
+.btnClose:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px #000;
+  background: var(--neon-pink);
+  color: #fff;
+}
+
+.btnClose:active {
+  transform: translate(1px, 1px);
+  box-shadow: none;
+}
+
+.content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.receipt {
+  background: var(--neon-yellow);
+  width: 100%;
+  padding: 16px;
+  border-radius: var(--border-radius-md);
+  border: var(--border-thin);
+  box-shadow: var(--shadow-brutal-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.receiptItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.receiptLabel {
+  font-size: 11px;
+  color: #000000;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.receiptValue {
+  font-size: 16px;
+  font-weight: 900;
+  color: #000000;
+}
+
+.qrContainer {
+  position: relative;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: var(--border-radius-md);
+  border: var(--border-thick);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-brutal-sm);
+}
+
+.qrWrapper {
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Beautiful QR scanning line animation */
+.qrScanLine {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  height: 4px;
+  background: var(--primary);
+  animation: scan 2s linear infinite;
+  box-shadow: 0 0 10px var(--primary);
+  border-radius: 2px;
+}
+
+@keyframes scan {
+  0% { top: 20px; }
+  50% { top: 200px; }
+  100% { top: 20px; }
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.upiText {
+  font-family: monospace;
+  font-size: 14px;
+  font-weight: 700;
+  background: var(--bg-secondary);
+  padding: 6px 14px;
+  border-radius: 6px;
+  color: #000000;
+  border: var(--border-thin);
+  box-shadow: 2px 2px 0px #000;
+}
+
+.instructions {
+  font-size: 13px;
+  color: #000000;
+  line-height: 1.5;
+  text-align: left;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--primary-light);
+  padding: 14px;
+  border-radius: var(--border-radius-md);
+  border: var(--border-thin);
+  box-shadow: var(--shadow-brutal-sm);
+}
+
+.instructionStep {
+  display: flex;
+  gap: 8px;
+  font-weight: 700;
+}
+
+.stepNum {
+  font-weight: 900;
+  color: var(--primary);
+}
+
+.footer {
+  padding: 16px 24px 24px 24px;
+  border-top: var(--border-thick);
+  display: flex;
+  gap: 12px;
+  background: var(--bg-secondary);
+}
+
+.btnAction {
+  flex: 1;
+  padding: 12px;
+  border-radius: var(--border-radius-xl);
+  font-size: 15px;
+  font-weight: 900;
+  cursor: pointer;
+  text-align: center;
+  border: var(--border-thin);
+  transition: var(--transition-bounce);
+  box-shadow: var(--shadow-brutal-sm);
+}
+
+.btnCancel {
+  background: #ffffff;
+  color: #000000;
+}
+
+.btnCancel:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-brutal);
+  background: var(--bg-tertiary);
+}
+
+.btnCancel:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #000;
+}
+
+.btnConfirm {
+  background: var(--neon-green);
+  color: #000000;
+}
+
+.btnConfirm:hover {
+  background: #00e676;
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-brutal);
+}
+
+.btnConfirm:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #000;
+}
